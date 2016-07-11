@@ -1,0 +1,40 @@
+{# This is our template/meetups_calendar.html page #}
+
+{% extends "base.html" %}
+{% block content %}
+    {% for event in events %}
+    <table>
+        <tr>
+            <td rowspan="3" class="calwidth">
+                <div class="calendar">
+                    <div class="header">{{event['time']['month']}}</div>
+                    <div class="num-day">{{event['time']['day']}}</div>
+                </div>
+            </td>
+            <td>
+                Name: {{event['name']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Start Time: {{event['time']['hour']}}:{{event['time']['minute']}}:{{event['time']['second']}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+        </tr>
+        <td>
+            {% if 'venue' in event %}
+                {{event['venue']['name']}} {{event['venue']['city']}} {{event['venue']['localized_country_name']}}
+            {% else %}
+                There is no venue for this meetup
+            {% endif %}
+            <td>
+                <button onclick="clickfunc()" class="myBtn" style="vertical-align:middle"><span>Open Details </span></button>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
+{% endblock %}

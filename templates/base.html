@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- dont know if following is need-->
+    <meta name="description" content="A Collection of Page Transitions with CSS Animations" />
+    <meta name="keywords" content="page transition, css animation, website, effect, css3, jquery" />
+    <meta name="author" content="Codrops" />
+    <!-- link the other files -->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link href="/static/css/stylescalendar.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/animations.css" />
+    <script src="../static/js/modernizr.custom.js"></script>
+</head>
+<body>
+<!-- zalando image fixed at top of screen -->
+    <div class=“row”>
+        <div class=“col-sm-12”>
+            <div class="fix_bar">
+                <img class="displayed" src="https://corporate.zalando.com/sites/default/files/zalando_logo_53.png">
+            </div>
+        </div>
+    </div>
+<!-- line under zalando image -->
+    <hr class="nopadding"/>
+
+    <div id="pt-main" class="pt-perspective">
+        {% for calendar in calendars %}
+        <div class="pt-page pt-page-{{ loop.index0 +1 }}">
+            <div class="main_info">
+            {% if calendar['name'] == 'Zalando' %}
+            <div class="calname">
+              {{calendar['name']}} Calendar
+            </div>
+            {% for event in calendar['events'] %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 nopadding">
+                            <div class="num-day">{{event['start']['day']}}</div>
+                            <div class="header">{{event['start']['month']}}</div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="col-md-12 padding_inside name">{{event['summary']}}</div>
+                            <div class="col-md-12 padding_inside time">Start Time: {{event['start']['hour']}}:{{event['start']['minute']}}:{{event['start']['second']}} to End Time: {{event['end']['hour']}}:{{event['end']['minute']}}:{{event['end']['second']}}</div>
+                            <div class="col-md-12 padding_inside location">{{event['location']}}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% else %}
+            <div class="calname">
+              {{calendar['id']}} Calendar
+            </div>
+            {% for event in calendar['events'] %}
+                <div class="container">
+                    <div class=“row”>
+                        <div class="col-md-3 nopadding">
+                            <div class="num-day">{{event['time']['day']}}</div>
+                            <div class="header">{{event['time']['month']}}</div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="col-md-12 padding_inside name">{{event['name']}}</div>
+                            <div class="col-md-12 padding_inside time">Start Time: {{event['time']['hour']}}:{{event['time']['minute']}}:{{event['second']}}</div>
+                            <div class="col-md-12 padding_inside location">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+<!--        <div class="pt-page pt-page-2">
+        <div class="container">
+            <div class="fix_bar">
+                <div class="col-md-12"><img class="displayed" src="https://corporate.zalando.com/sites/default/files/zalando_logo_53.png">
+                    <hr />
+                </div>
+            </div>
+        </div>
+        <div>
+        {% for event in events %}
+            <div>
+                <div class="col-sm-3 calendar">
+                    <div class="header">{{event['start']['month']}}</div>
+                    <div class="num-day">{{event['start']['day']}}</div>
+                </div>
+                <div>
+                    <div class="col-sm-9 padding_inside">Name: {{event['summary']}}</div>
+                    <div class="col-sm-9 padding_inside">Start Time: {{event['start']['hour']}}:{{event['start']['minute']}}:{{event['start']['second']}} to End Time: {{event['end']['hour']}}:{{event['end']['minute']}}:{{event['end']['second']}}</div>
+                    <div class="col-sm-9 padding_inside">{{event['location']}}</div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+        </div>
+        <div class="pt-page pt-page-3"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
+        <div class="pt-page pt-page-4"></div>
+        <div class="pt-page pt-page-5"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
+        <div class="pt-page pt-page-6"><h1><span>A collection of</span><strong>Page</strong> Transitions</h1></div>
+-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../static/js/jquery.dlmenu.js"></script>
+    <script src="../static/js/pagetransitions.js"></script>
+    <script src="../static/js/main.js"></script>
+</body>
+</html>

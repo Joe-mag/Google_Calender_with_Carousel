@@ -1,0 +1,137 @@
+/* The Modal (background) */
+
+hr {
+    color: #000000;
+}
+.main_info {
+    padding-top: 62px;
+}
+.button {
+    margin-top: 200px;
+}
+/* centering zalaodo image */
+
+IMG.displayed {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+/* style calendar */
+/*.calendar {
+   width: 100%;
+   height: 100%;
+   position: relative;
+   background: white;
+}*/
+
+div.header {
+    font-family: Book Antiqua;
+    font-size: 25px;
+    font-weight:600;
+}
+
+div.num-day {
+    font-family: Book Antiqua;
+    font-size: 55px;
+    font-weight:100;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    color: #333;
+    line-height: 30px;
+    padding-bottom: 10px
+}
+
+.num-day {
+    color: #333;
+    text-align: center;
+    padding-top: 7px;
+}
+
+.padding_inside {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.fix_bar {
+    background-color: white;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border:1px solid #d9d9d9;
+    max-width: 800px;
+    padding: 0 !important;
+}
+
+.col-sm-3 {
+    height: 100%;
+    width: 100%;
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.body {
+    background-color: #f5f5f5;
+}
+
+div.name {
+    font-family: Book Antiqua;
+    font-size: 20px;
+    font-weight:700;
+}
+
+div.time {
+    font-family: Book Antiqua;
+    font-size: 16px;
+    font-weight:400;
+}
+
+div.location {
+    font-family: Book Antiqua;
+    font-size: 16px;
+    font-weight:400;
+    font-style: italic;
+}
+
+div.container:nth-child(odd) .num-day {
+    background-color: red;
+}
+
+div.container:nth-child(odd) .header {
+    background-color: red;
+}
+
+div.container:nth-child(even) .num-day {
+    background-color: lightblue;
+}
+
+div.container:nth-child(even) .header {
+    background-color: lightblue;
+}
+div.calname {
+  font-weight: 300;
+  font-style: oblique;
+  font-size: 34px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px
+}
